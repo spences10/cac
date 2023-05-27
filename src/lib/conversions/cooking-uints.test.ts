@@ -1,5 +1,5 @@
 import { describe, expect, test } from 'vitest'
-import { convert_cooking } from './cooking'
+import { convert_cooking } from './cooking-units'
 
 describe('Cooking Measurements Conversion', () => {
 	test('should convert teaspoons to millilitres', () => {
