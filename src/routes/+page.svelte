@@ -12,18 +12,19 @@
 	let from_unit = ''
 	let to_unit = ''
 	let value = ''
+	let converted_value: number | string = ''
 
-	function convert() {
+	$: {
 		if (selected_conversion && selected_conversion.function) {
-			const convertedValue = selected_conversion.function(
+			const conversion = selected_conversion.function(
 				from_unit,
 				to_unit,
 				parseFloat(value)
 			)
-			if (convertedValue !== null) {
-				alert(`Converted value: ${convertedValue}`)
+			if (conversion !== null) {
+				converted_value = conversion
 			} else {
-				alert('Invalid conversion parameters')
+				converted_value = 'Invalid conversion parameters'
 			}
 		}
 	}
@@ -49,11 +50,6 @@
 	</label>
 
 	<label>
-		Value:
-		<input type="number" bind:value min="0" />
-	</label>
-
-	<label>
 		To:
 		<select bind:value={to_unit}>
 			{#each Object.keys(selected_conversion.units) as unit (unit)}
@@ -62,5 +58,10 @@
 		</select>
 	</label>
 
-	<button on:click={convert}>Convert</button>
+	<label>
+		Value:
+		<input type="number" bind:value min="0" />
+	</label>
+
+	<p>Converted Value: {converted_value}</p>
 {/if}
