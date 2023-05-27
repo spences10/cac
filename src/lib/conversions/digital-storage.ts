@@ -2,7 +2,7 @@ interface DigitalStorageUnits {
 	[key: string]: number
 }
 
-const digital_storage_units: DigitalStorageUnits = {
+export const digital_storage_units: DigitalStorageUnits = {
 	b: 1,
 	kb: 1024,
 	mb: 1048576,

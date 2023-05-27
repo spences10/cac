@@ -2,7 +2,7 @@ interface CookingUnits {
 	[key: string]: number
 }
 
-const cooking_units: CookingUnits = {
+export const cooking_units: CookingUnits = {
 	tsp: 0.00492892,
 	tbsp: 0.0147868,
 	cup: 0.236588,

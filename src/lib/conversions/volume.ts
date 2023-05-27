@@ -2,7 +2,7 @@ interface VolumeUnits {
 	[key: string]: number
 }
 
-const volume_units: VolumeUnits = {
+export const volume_units: VolumeUnits = {
 	ml: 0.001,
 	l: 1,
 	cu_m: 1000,

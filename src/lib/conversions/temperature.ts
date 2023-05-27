@@ -1,36 +1,37 @@
+interface TemperatureUnits {
+	[key: string]: {
+		multiplier: number
+		offset: number
+	}
+}
+
+export const temperature_units: TemperatureUnits = {
+	c: { multiplier: 1, offset: 0 },
+	f: { multiplier: 1.8, offset: 32 },
+	k: { multiplier: 1, offset: 273.15 },
+}
+
 export function convert_temperature(
 	from_unit: string,
 	to_unit: string,
 	value: number
 ): number | null {
-	if (from_unit === to_unit) {
-		return value
+	if (
+		!temperature_units.hasOwnProperty(from_unit) ||
+		!temperature_units.hasOwnProperty(to_unit)
+	) {
+		return null // Invalid unit
 	}
 
-	let celsius = 0
+	// Convert to Celsius first
+	const celsius =
+		(value - temperature_units[from_unit].offset) /
+		temperature_units[from_unit].multiplier
 
-	switch (from_unit) {
-		case 'c':
-			celsius = value
-			break
-		case 'f':
-			celsius = (value - 32) / 1.8
-			break
-		case 'k':
-			celsius = value - 273.15
-			break
-		default:
-			return null // Invalid unit
-	}
+	// Convert to the desired unit
+	const converted_value =
+		celsius * temperature_units[to_unit].multiplier +
+		temperature_units[to_unit].offset
 
-	switch (to_unit) {
-		case 'c':
-			return celsius
-		case 'f':
-			return celsius * 1.8 + 32
-		case 'k':
-			return celsius + 273.15
-		default:
-			return null // Invalid unit
-	}
+	return converted_value
 }

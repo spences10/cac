@@ -2,7 +2,7 @@ interface SpeedUnits {
 	[key: string]: number
 }
 
-const speed_units: SpeedUnits = {
+export const speed_units: SpeedUnits = {
 	m_s: 1,
 	km_h: 1 / 3.6,
 	mph: 1 / 2.23694,

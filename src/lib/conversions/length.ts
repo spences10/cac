@@ -2,7 +2,7 @@ interface LengthUnits {
 	[key: string]: number
 }
 
-const length_units: LengthUnits = {
+export const length_units: LengthUnits = {
 	mm: 0.001,
 	cm: 0.01,
 	m: 1,

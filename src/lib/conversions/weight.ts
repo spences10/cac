@@ -2,7 +2,7 @@ interface WeightUnits {
 	[key: string]: number
 }
 
-const weight_units: WeightUnits = {
+export const weight_units: WeightUnits = {
 	mg: 0.000001,
 	g: 0.001,
 	kg: 1,

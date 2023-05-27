@@ -2,7 +2,7 @@ interface TimeUnits {
 	[key: string]: number
 }
 
-const time_units: TimeUnits = {
+export const time_units: TimeUnits = {
 	ms: 0.001,
 	s: 1,
 	min: 60,
