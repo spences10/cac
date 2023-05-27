@@ -1,22 +1,22 @@
 interface PercentageUnits {
-	[key: string]: (number: number, percentage: number) => number
+	[key: string]: (base: number, percentage: number) => number
 }
 
 export const percentage_units: PercentageUnits = {
-	percentage_of_number: (number, percentage) =>
-		(percentage / 100) * number,
-	number_from_percentage: (number, percentage) =>
-		(number / percentage) * 100,
+	percentage_of_number: (base, percentage) =>
+		(percentage / 100) * base,
+	number_from_percentage: (base, percentage) =>
+		(base * 100) / percentage,
 }
 
 export function convert_percentage(
 	unit: string,
-	number: number,
+	base: number,
 	percentage: number
 ): number | null {
 	if (!percentage_units.hasOwnProperty(unit)) {
 		return null // Invalid unit
 	}
 
-	return percentage_units[unit](number, percentage)
+	return percentage_units[unit](base, percentage)
 }

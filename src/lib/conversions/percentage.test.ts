@@ -15,8 +15,8 @@ describe('Percentage of a number calculation', () => {
 	})
 
 	test('should calculate the base number from a percentage', () => {
-		expect(convert_percentage('number_from_percentage', 10, 50)).toBe(
-			20
+		expect(convert_percentage('number_from_percentage', 20, 50)).toBe(
+			40
 		)
 		expect(
 			convert_percentage('number_from_percentage', 50, 100)
