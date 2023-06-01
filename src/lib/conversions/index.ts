@@ -1,3 +1,4 @@
+export { animal_age_units, convert_animal_age } from './animal-age'
 export { convert_cooking, cooking_units } from './cooking-units'
 export { convert_data_rate, data_rate_units } from './data-rate'
 export {

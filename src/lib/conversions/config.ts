@@ -1,6 +1,11 @@
-import * as c from './'
+import * as c from '.'
 
 export const conversions = [
+	{
+		name: 'Animal Age',
+		function: c.convert_animal_age,
+		units: c.animal_age_units,
+	},
 	{
 		name: 'Cooking',
 		function: c.convert_cooking,
@@ -21,11 +26,11 @@ export const conversions = [
 		function: c.convert_length,
 		units: c.length_units,
 	},
-	{
-		name: 'Percentage',
-		function: c.convert_percentage,
-		units: c.percentage_units,
-	},
+	// {
+	// 	name: 'Percentage',
+	// 	function: c.convert_percentage,
+	// 	units: c.percentage_units,
+	// },
 	{
 		name: 'Speed',
 		function: c.convert_speed,
