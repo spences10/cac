@@ -11,11 +11,11 @@
 
 	let from_unit = ''
 	let to_unit = ''
-	let value = ''
-	let converted_value: number | string = ''
+	let value = '0'
+	let converted_value: number = 0
 
 	$: {
-		if (selected_conversion && selected_conversion.function) {
+		if (selected_conversion) {
 			const conversion = selected_conversion.function(
 				from_unit,
 				to_unit,
@@ -24,7 +24,7 @@
 			if (conversion !== null) {
 				converted_value = conversion
 			} else {
-				converted_value = 'Invalid conversion parameters'
+				converted_value = 0
 			}
 		}
 	}
