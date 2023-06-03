@@ -22,8 +22,8 @@ export function convert_animal_age(
 		return null // Invalid unit
 	}
 
-	const value_in_human = value * animal_age_units[from_unit]
-	const converted_value = value_in_human / animal_age_units[to_unit]
+	const value_in_human = value / animal_age_units[from_unit]
+	const converted_value = value_in_human * animal_age_units[to_unit]
 
 	return converted_value
 }
