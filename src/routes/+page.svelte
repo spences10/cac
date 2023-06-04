@@ -64,6 +64,7 @@
 		Calculate simplifies these tasks into a matter of a few clicks,
 		providing you with accurate results in an instant.
 	</p>
+	<small>* Animal ages are a rough approximation.</small>
 </section>
 
 <h2 id="conversion-selection">Select Conversion Type</h2>
@@ -106,8 +107,11 @@
 			/>
 
 			<Input id="value-input" label="Value" bind:value />
-
-			<h3>Converted Value: {converted_value.toFixed(2)}</h3>
+			<h3
+				class="text-center font-bold leading-relaxed tracking-wide p-2 rounded-box shadow-lg bg-primary-content text-secondary-content"
+			>
+				Value: {Number(converted_value.toFixed(2)).toLocaleString()}
+			</h3>
 		{/if}
 	</div>
 </section>
