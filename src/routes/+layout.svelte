@@ -20,7 +20,7 @@
 			<label class="swap swap-rotate">
 				<input
 					type="checkbox"
-					class="theme-controller"
+					class="theme-controller hidden"
 					value="dark"
 				/>
 				<Sun class_names="swap-on h-6 w-6" />

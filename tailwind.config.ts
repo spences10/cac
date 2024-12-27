@@ -18,7 +18,7 @@ export default {
 	},
 
 	daisyui: {
-		themes: ['corporate'],
+		themes: ['light', 'dark'],
 	},
 
 	plugins: [typography, daisyui],

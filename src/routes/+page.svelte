@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Input from '$lib/components/input.svelte';
 	import Select from '$lib/components/select.svelte';
-	import Info from '$lib/icons/info.svelte';
 	import { conversions } from '$lib/conversions/config';
+	import Info from '$lib/icons/info.svelte';
 
 	interface Conversion {
 		name: string;
@@ -77,7 +77,7 @@
 
 <div class="card bg-base-100 shadow-xl">
 	<div class="card-body">
-		<h2 class="card-title mb-4">Convert Units</h2>
+		<h2 class="card-title mb-4 mt-0">Convert Units</h2>
 
 		<div class="grid gap-6">
 			<div class="relative">
