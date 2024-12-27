@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Input from '$lib/components/input.svelte';
 	import Select from '$lib/components/select.svelte';
+	import Info from '$lib/icons/info.svelte';
 	import { conversions } from '$lib/conversions/config';
 
 	interface Conversion {
@@ -51,82 +52,119 @@
 	/>
 </svelte:head>
 
-<h1>Convert and Calculate</h1>
-
-<section>
-	<h2 id="intro" class="hidden">Introduction</h2>
-	<p>
-		Welcome to Convert and Calculate - your one-stop solution for a
-		wide array of unit conversions. Whether you're looking to convert
-		animal ages, compare cooking measurements, calculate digital
-		storage, or convert between different speed, temperature, volume,
-		weight, or length units, we've got you covered. Convert and
-		Calculate simplifies these tasks into a matter of a few clicks,
-		providing you with accurate results in an instant.
-	</p>
-	<small>* Animal ages are a rough approximation.</small>
-</section>
-
-<h2 id="conversion-selection">Select Conversion Type</h2>
-<section
-	aria-labelledby="conversion-selection"
-	class="card bg-secondary mb-5 shadow-lg"
->
-	<div class="card-body">
-		<Select
-			id="conversion-select"
-			label="Select a conversion"
-			options={conversions.map((c) => ({ name: c.name }))}
-			placeholder="Conversions"
-			bind:selected_option={selected_conversion_name}
-		/>
-
-		{#if selected_conversion && selected_conversion.units}
-			<Select
-				id="from-unit-select"
-				label="From"
-				options={Object.keys(selected_conversion.units).map(
-					(unit) => ({
-						name: unit,
-					}),
-				)}
-				placeholder="From"
-				bind:selected_option={from_unit}
-			/>
-
-			<Select
-				id="to-unit-select"
-				label="To"
-				options={Object.keys(selected_conversion.units).map(
-					(unit) => ({
-						name: unit,
-					}),
-				)}
-				placeholder="To"
-				bind:selected_option={to_unit}
-			/>
-
-			<Input id="value-input" label="Value" bind:value />
-			<h3
-				class="rounded-box bg-primary-content text-secondary-content p-2 text-center font-bold leading-relaxed tracking-wide shadow-lg"
-			>
-				Value: {Number(converted_value.toFixed(2)).toLocaleString()}
-			</h3>
-		{/if}
+<div class="hero bg-base-100 py-8">
+	<div class="hero-content text-center">
+		<div class="max-w-2xl">
+			<h1 class="mb-4 text-5xl font-bold">Convert and Calculate</h1>
+			<p class="mb-6">
+				Your one-stop solution for unit conversions. From animal ages
+				to digital storage, we've got you covered with instant,
+				accurate conversions at your fingertips.
+			</p>
+			<div class="badge badge-warning gap-2">
+				<Info
+					height="16px"
+					width="16px"
+					class_names="stroke-current"
+				/>
+				Animal ages are approximate
+			</div>
+		</div>
 	</div>
-</section>
+</div>
 
-<p>
-	Delve into the world of conversion and calculations with our
-	comprehensive tool that's designed to make your life easier. Whether
-	you're a student, a professional, or just someone seeking to make
-	sense of the world in different units, Universal Converter is here
-	to assist.
-</p>
+<div class="divider my-8"></div>
 
-<p>
-	Navigating through various measurement systems has never been
-	easier. From cooking to data rates, animal age to digital storage -
-	we cover it all. Try out Universal Converter today, and experience
-	the ease of converting and calculating at your fingertips.
-</p>
+<div class="card bg-base-100 shadow-xl">
+	<div class="card-body">
+		<h2 class="card-title mb-4">Convert Units</h2>
+
+		<div class="grid gap-6">
+			<div class="relative">
+				<Select
+					id="conversion-select"
+					label="Select conversion type"
+					options={conversions.map((c) => ({ name: c.name }))}
+					placeholder="Choose conversion..."
+					bind:selected_option={selected_conversion_name}
+					select_classes="min-h-12"
+				/>
+			</div>
+
+			{#if selected_conversion && selected_conversion.units}
+				<div class="grid gap-6 md:grid-cols-2">
+					<Select
+						id="from-unit-select"
+						label="From"
+						options={Object.keys(selected_conversion.units).map(
+							(unit) => ({
+								name: unit,
+							}),
+						)}
+						placeholder="Select unit..."
+						bind:selected_option={from_unit}
+					/>
+
+					<Select
+						id="to-unit-select"
+						label="To"
+						options={Object.keys(selected_conversion.units).map(
+							(unit) => ({
+								name: unit,
+							}),
+						)}
+						placeholder="Select unit..."
+						bind:selected_option={to_unit}
+					/>
+				</div>
+
+				<Input
+					id="value-input"
+					label="Enter value"
+					bind:value
+					placeholder="Enter a number..."
+				/>
+
+				<div class="stats bg-primary text-primary-content shadow">
+					<div class="stat">
+						<div class="stat-title text-primary-content/80">
+							Converted Value
+						</div>
+						<div class="stat-value">
+							{Number(converted_value.toFixed(2)).toLocaleString()}
+						</div>
+						<div class="stat-desc text-primary-content/60">
+							{to_unit}
+						</div>
+					</div>
+				</div>
+			{/if}
+		</div>
+	</div>
+</div>
+
+<div class="divider my-8"></div>
+
+<div class="grid gap-4 md:grid-cols-2">
+	<div class="card bg-base-100 shadow-lg">
+		<div class="card-body">
+			<h3 class="card-title">For Everyone</h3>
+			<p>
+				Whether you're a student, professional, or just curious about
+				unit conversions, our tool makes it easy to understand
+				different measurement systems.
+			</p>
+		</div>
+	</div>
+
+	<div class="card bg-base-100 shadow-lg">
+		<div class="card-body">
+			<h3 class="card-title">Comprehensive Coverage</h3>
+			<p>
+				From cooking measurements to data rates, temperature to
+				digital storage - we cover all your conversion needs in one
+				place.
+			</p>
+		</div>
+	</div>
+</div>
