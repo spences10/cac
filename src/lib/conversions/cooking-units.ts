@@ -1,5 +1,5 @@
 interface CookingUnits {
-	[key: string]: number
+	[key: string]: number;
 }
 
 export const cooking_units: CookingUnits = {
@@ -12,23 +12,23 @@ export const cooking_units: CookingUnits = {
 	oz: 0.0283495, // Ounces to Grams
 	kg: 1,
 	g: 0.001,
-}
+};
 
 export function convert_cooking(
 	from_unit: string,
 	to_unit: string,
-	value: number
+	value: number,
 ): number | null {
 	if (
 		!cooking_units.hasOwnProperty(from_unit) ||
 		!cooking_units.hasOwnProperty(to_unit)
 	) {
-		return null // Invalid unit
+		return null; // Invalid unit
 	}
 
 	// Convert to litres/kilograms first, then to the desired unit
-	const value_in_base_unit = value * cooking_units[from_unit]
-	const converted_value = value_in_base_unit / cooking_units[to_unit]
+	const value_in_base_unit = value * cooking_units[from_unit];
+	const converted_value = value_in_base_unit / cooking_units[to_unit];
 
-	return converted_value
+	return converted_value;
 }

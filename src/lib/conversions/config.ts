@@ -1,4 +1,4 @@
-import * as c from '.'
+import * as c from '.';
 
 export const conversions = [
 	{
@@ -56,4 +56,4 @@ export const conversions = [
 		function: c.convert_weight,
 		units: c.weight_units,
 	},
-]
+];

@@ -1,17 +1,17 @@
 <script lang="ts">
-	export let id = ''
-	export let label = ''
-	export let font_size: string = 'text-base'
-	export let select_classes: string = ''
-	export let options: { name: string; selected?: boolean }[] = []
-	export let disabled_option: string = ''
-	export let placeholder: string = ''
-	let value = disabled_option
-	export { value as selected_option }
+	export let id = '';
+	export let label = '';
+	export let font_size: string = 'text-base';
+	export let select_classes: string = '';
+	export let options: { name: string; selected?: boolean }[] = [];
+	export let disabled_option: string = '';
+	export let placeholder: string = '';
+	let value = disabled_option;
+	export { value as selected_option };
 </script>
 
-<div class="form-control w-full max-w-2xl mb-2">
-	<label for={id} class="label font-medium pb-1">
+<div class="form-control mb-2 w-full max-w-2xl">
+	<label for={id} class="label pb-1 font-medium">
 		<span class="label-text {font_size}">{label}</span>
 	</label>
 	<select

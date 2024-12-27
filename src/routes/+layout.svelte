@@ -1,9 +1,9 @@
 <script>
-	import '../app.css'
+	import '../app.css';
 </script>
 
 <main
-	class="container max-w-3xl mx-auto px-4 prose prose-xl prose-headings:text-primary"
+	class="prose-headings:text-primary container prose prose-xl mx-auto max-w-3xl px-4"
 >
 	<slot />
 </main>

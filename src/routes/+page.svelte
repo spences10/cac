@@ -1,26 +1,26 @@
 <script lang="ts">
-	import Input from '$lib/components/input.svelte'
-	import Select from '$lib/components/select.svelte'
-	import { conversions } from '$lib/conversions/config'
+	import Input from '$lib/components/input.svelte';
+	import Select from '$lib/components/select.svelte';
+	import { conversions } from '$lib/conversions/config';
 
 	interface Conversion {
-		name: string
-		function: (arg0: string, arg1: string, arg2: number) => any
-		units: Record<string, any> | null
+		name: string;
+		function: (arg0: string, arg1: string, arg2: number) => any;
+		units: Record<string, any> | null;
 	}
 
-	let from_unit = ''
-	let to_unit = ''
-	let value = '0'
-	let converted_value: number = 0
+	let from_unit = '';
+	let to_unit = '';
+	let value = '0';
+	let converted_value: number = 0;
 
-	let selected_conversion_name = ''
-	let selected_conversion: Conversion | null = null
+	let selected_conversion_name = '';
+	let selected_conversion: Conversion | null = null;
 
 	$: {
 		selected_conversion =
 			conversions.find((c) => c.name === selected_conversion_name) ||
-			null
+			null;
 	}
 
 	$: {
@@ -28,10 +28,10 @@
 			converted_value = selected_conversion.function(
 				from_unit,
 				to_unit,
-				Number(value)
-			)
+				Number(value),
+			);
 		} else {
-			converted_value = 0
+			converted_value = 0;
 		}
 	}
 </script>
@@ -70,7 +70,7 @@
 <h2 id="conversion-selection">Select Conversion Type</h2>
 <section
 	aria-labelledby="conversion-selection"
-	class="mb-5 card shadow-lg bg-secondary"
+	class="card bg-secondary mb-5 shadow-lg"
 >
 	<div class="card-body">
 		<Select
@@ -88,7 +88,7 @@
 				options={Object.keys(selected_conversion.units).map(
 					(unit) => ({
 						name: unit,
-					})
+					}),
 				)}
 				placeholder="From"
 				bind:selected_option={from_unit}
@@ -100,7 +100,7 @@
 				options={Object.keys(selected_conversion.units).map(
 					(unit) => ({
 						name: unit,
-					})
+					}),
 				)}
 				placeholder="To"
 				bind:selected_option={to_unit}
@@ -108,7 +108,7 @@
 
 			<Input id="value-input" label="Value" bind:value />
 			<h3
-				class="text-center font-bold leading-relaxed tracking-wide p-2 rounded-box shadow-lg bg-primary-content text-secondary-content"
+				class="rounded-box bg-primary-content text-secondary-content p-2 text-center font-bold leading-relaxed tracking-wide shadow-lg"
 			>
 				Value: {Number(converted_value.toFixed(2)).toLocaleString()}
 			</h3>
