@@ -1,13 +1,26 @@
 <script lang="ts">
-	export let id = '';
-	export let label = '';
-	export let font_size: string = 'text-base';
-	export let select_classes: string = '';
-	export let options: { name: string; selected?: boolean }[] = [];
-	export let disabled_option: string = '';
-	export let placeholder: string = '';
-	let value = disabled_option;
-	export { value as selected_option };
+	interface Props {
+		id?: string;
+		label?: string;
+		font_size?: string;
+		select_classes?: string;
+		options?: { name: string; selected?: boolean }[];
+		disabled_option?: string;
+		placeholder?: string;
+		selected_option?: any;
+	}
+
+	let {
+		id = '',
+		label = '',
+		font_size = 'text-base',
+		select_classes = '',
+		options = [],
+		disabled_option = '',
+		placeholder = '',
+		selected_option: value = $bindable(disabled_option)
+	}: Props = $props();
+	
 </script>
 
 <div class="form-control mb-2 w-full max-w-2xl">

@@ -1,13 +1,27 @@
 <script lang="ts">
-	export let value = '';
-	export let placeholder = '';
-	export let id = '';
-	export let label = '';
-	export let disabled = false;
-	export let required = false;
-	export let errors: string[] = [];
-	export let font_size: string = 'text-base';
-	export let input_classes: string = '';
+	interface Props {
+		value?: string;
+		placeholder?: string;
+		id?: string;
+		label?: string;
+		disabled?: boolean;
+		required?: boolean;
+		errors?: string[];
+		font_size?: string;
+		input_classes?: string;
+	}
+
+	let {
+		value = $bindable(''),
+		placeholder = '',
+		id = '',
+		label = '',
+		disabled = false,
+		required = false,
+		errors = [],
+		font_size = 'text-base',
+		input_classes = ''
+	}: Props = $props();
 </script>
 
 <div class="form-control mb-2 w-full max-w-2xl">

@@ -9,21 +9,21 @@
 		units: Record<string, any> | null;
 	}
 
-	let from_unit = '';
-	let to_unit = '';
-	let value = '0';
-	let converted_value: number = 0;
+	let from_unit = $state('');
+	let to_unit = $state('');
+	let value = $state('0');
+	let converted_value: number = $state(0);
 
-	let selected_conversion_name = '';
-	let selected_conversion: Conversion | null = null;
+	let selected_conversion_name = $state('');
+	let selected_conversion: Conversion | null = $state(null);
 
-	$: {
+	$effect(() => {
 		selected_conversion =
 			conversions.find((c) => c.name === selected_conversion_name) ||
 			null;
-	}
+	});
 
-	$: {
+	$effect(() => {
 		if (selected_conversion && from_unit && to_unit && value) {
 			converted_value = selected_conversion.function(
 				from_unit,
@@ -33,7 +33,7 @@
 		} else {
 			converted_value = 0;
 		}
-	}
+	});
 </script>
 
 <svelte:head>
