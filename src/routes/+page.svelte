@@ -77,7 +77,7 @@
 
 <div class="card bg-base-100 shadow-xl">
 	<div class="card-body">
-		<h2 class="card-title mb-4 mt-0">Convert Units</h2>
+		<h2 class="card-title mt-0 mb-4">Convert Units</h2>
 
 		<div class="grid gap-6">
 			<div class="relative">
