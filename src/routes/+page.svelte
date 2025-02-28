@@ -52,7 +52,7 @@
 	/>
 </svelte:head>
 
-<div class="hero bg-base-100 py-8">
+<div class="hero bg-base-100 py-8 rounded-box">
 	<div class="hero-content text-center">
 		<div class="max-w-2xl">
 			<h1 class="mb-4 text-5xl font-bold">Convert and Calculate</h1>

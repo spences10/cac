@@ -29,7 +29,7 @@
 		<span class="label-text font-medium {font_size}">{label}</span>
 	</label>
 	<input
-		class="input input-bordered bg-base-100 focus:ring-primary w-full focus:ring-2 focus:outline-none {errors?.length
+		class="input input-primary rounded-box bg-base-100 focus:ring-primary w-full focus:ring-2 focus:outline-none {errors?.length
 			? 'input-error'
 			: ''} {font_size} {input_classes}"
 		type="number"

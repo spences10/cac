@@ -36,7 +36,7 @@
 		</div>
 		<select
 			bind:value
-			class="select select-bordered btn-block bg-base-100 hover:bg-base-200 focus:bg-base-200 focus:ring-primary min-h-12 appearance-none px-4 transition-colors focus:ring-2 focus:outline-none {font_size} {select_classes}"
+			class="select select-primary rounded-box btn-block bg-base-100 hover:bg-base-200 focus:bg-base-200 focus:ring-primary min-h-12 appearance-none px-4 transition-colors focus:ring-2 focus:outline-none {font_size} {select_classes}"
 			{id}
 			name={id}
 			aria-label={label}
