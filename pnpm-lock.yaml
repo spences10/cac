@@ -19,10 +19,10 @@ importers:
         version: 1.54.2
       '@sveltejs/adapter-auto':
         specifier: ^6.0.2
-        version: 6.1.0(@sveltejs/kit@2.27.3(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))
+        version: 6.1.0(@sveltejs/kit@2.31.1(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))
       '@sveltejs/kit':
         specifier: ^2.27.3
-        version: 2.27.3(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))
+        version: 2.31.1(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.1.1
         version: 6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))
@@ -405,8 +405,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@polka/url@1.0.0-next.28':
-    resolution: {integrity: sha512-8LduaNlMZGwdZ6qWrKlfa+2M4gahzFkprZiAt2TF8uS0qQgBizKXpXURqvTJ4WtmupWxaLqjRb2UCTe72mu+Aw==}
+  '@polka/url@1.0.0-next.29':
+    resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
   '@rollup/rollup-android-arm-eabi@4.46.2':
     resolution: {integrity: sha512-Zj3Hl6sN34xJtMv7Anwb5Gu01yujyE/cLBDB2gnHTAHaWS1Z38L7kuSG+oAh0giZMqG060f/YBStXtMH6FvPMA==}
@@ -521,14 +521,18 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.27.3':
-    resolution: {integrity: sha512-jiG3NGZ8RRpi+ncjVnX+oR7uWEgzy//3YLGcTU5mHtjGraeGyNDr7GJFHlk7z0vi8bMXpXIUkEXj6p70FJmHvw==}
+  '@sveltejs/kit@2.31.1':
+    resolution: {integrity: sha512-Iv98PKh81amOjIWZ6Flqr6E7xYcrrYZ4mY9XwYUvaCDiQ4hYt5+jXR9CivcgLOTK+RcJ3K4guEYF4lFYQfTxaA==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
+      '@opentelemetry/api': ^1.0.0
       '@sveltejs/vite-plugin-svelte': ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0
       svelte: ^4.0.0 || ^5.0.0-next.0
       vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0
+    peerDependenciesMeta:
+      '@opentelemetry/api':
+        optional: true
 
   '@sveltejs/vite-plugin-svelte-inspector@5.0.0':
     resolution: {integrity: sha512-iwQ8Z4ET6ZFSt/gC+tVfcsSBHwsqc6RumSaiLUkAurW3BCpJam65cmHw0oOlDMTO0u+PZi9hilBRYN+LZNHTUQ==}
@@ -2143,7 +2147,7 @@ snapshots:
     dependencies:
       playwright: 1.54.2
 
-  '@polka/url@1.0.0-next.28': {}
+  '@polka/url@1.0.0-next.29': {}
 
   '@rollup/rollup-android-arm-eabi@4.46.2':
     optional: true
@@ -2211,11 +2215,11 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-auto@6.1.0(@sveltejs/kit@2.27.3(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))':
+  '@sveltejs/adapter-auto@6.1.0(@sveltejs/kit@2.31.1(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))':
     dependencies:
-      '@sveltejs/kit': 2.27.3(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))
+      '@sveltejs/kit': 2.31.1(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))
 
-  '@sveltejs/kit@2.27.3(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))':
+  '@sveltejs/kit@2.31.1(@sveltejs/vite-plugin-svelte@6.1.1(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1)))(svelte@5.38.0)(vite@7.1.1(jiti@2.5.1)(lightningcss@1.30.1))':
     dependencies:
       '@standard-schema/spec': 1.0.0
       '@sveltejs/acorn-typescript': 1.0.5(acorn@8.15.0)
@@ -3034,7 +3038,7 @@ snapshots:
 
   magic-string@0.30.17:
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.4
+      '@jridgewell/sourcemap-codec': 1.5.5
 
   merge2@1.4.1: {}
 
@@ -3249,7 +3253,7 @@ snapshots:
 
   sirv@3.0.1:
     dependencies:
-      '@polka/url': 1.0.0-next.28
+      '@polka/url': 1.0.0-next.29
       mrmime: 2.0.1
       totalist: 3.0.1
 
